@@ -1,0 +1,15 @@
+{
+    "name": "mohammadhsn/value-object",
+    "description": "PHP Value objects",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Values\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    }
+}
