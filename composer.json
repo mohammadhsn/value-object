@@ -2,6 +2,9 @@
     "name": "mohammadhsn/value-object",
     "description": "PHP Value objects",
     "license": "MIT",
+    "require": {
+        "php": "^8.1"
+    },
     "autoload": {
         "psr-4": {
             "Values\\": "src"
