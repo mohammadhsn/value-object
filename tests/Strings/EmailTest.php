@@ -18,4 +18,16 @@ class EmailTest extends TestCase
         $this->expectException(ValueError::class);
         new Email('foobar');
     }
+
+    public function test_username()
+    {
+        $email = new Email('foo@bar.com');
+        $this->assertEquals('foo', $email->username());
+    }
+
+    public function test_provide()
+    {
+        $email = new Email('foo@bar.com');
+        $this->assertEquals('bar.com', $email->provider());
+    }
 }

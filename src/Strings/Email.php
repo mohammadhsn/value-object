@@ -26,4 +26,14 @@ class Email
     {
         return $this->value == $other->value;
     }
+
+    public function provider(): string
+    {
+        return explode('@', $this->value)[1];
+    }
+
+    public function username(): string
+    {
+        return explode('@', $this->value)[0];
+    }
 }
