@@ -2,7 +2,6 @@
 
 namespace Tests\Strings;
 
-use Closure;
 use PHPUnit\Framework\TestCase;
 use Values\Strings\Str;
 
@@ -89,5 +88,21 @@ class StrTest extends TestCase
     public function test_is_lower()
     {
         $this->assertTrue(Str::new('four')->isLower());
+    }
+
+    public function test_to_array()
+    {
+        $this->assertCount(5, Str::new('hello')->toArray());
+    }
+
+    public function test_matches_with_pattern()
+    {
+        $this->assertTrue(
+            Str::new('d3d')->matchesWithPattern('/^\w\d\w$/')
+        );
+
+        $this->assertFalse(
+            Str::new('d3d5')->matchesWithPattern('/^\w\d\w$/')
+        );
     }
 }

@@ -2,6 +2,8 @@
 
 namespace Values\Strings;
 
+use Generator;
+
 class Str
 {
     public function __construct(public string $value)
@@ -43,6 +45,15 @@ class Str
         return $str;
     }
 
+    /** @return Str[] */
+    public function toArray(): array
+    {
+        return array_map(
+            fn (string $c) => static::new($c),
+            str_split($this->value)
+        );
+    }
+
     public function replace(self $search, self $replace): self
     {
         return static::new(
@@ -73,6 +84,11 @@ class Str
     public function split(self $separator = new self(' '))
     {
         return array_map([$this, 'new'], explode($separator->value, $this->value));
+    }
+
+    public function matchesWithPattern(string $pattern): bool
+    {
+        return preg_match("$pattern", $this->value);
     }
 
     public function quote(): self
