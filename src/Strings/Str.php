@@ -111,4 +111,14 @@ class Str
 
         return ctype_alnum($str->value);
     }
+
+    public function isUpper(): bool
+    {
+        return ctype_upper($this->value);
+    }
+
+    public function isLower(): bool
+    {
+        return ctype_lower($this->value);
+    }
 }

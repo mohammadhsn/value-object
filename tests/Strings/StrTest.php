@@ -80,4 +80,14 @@ class StrTest extends TestCase
     {
         $this->assertTrue(Str::new('123')->isNumeric());
     }
+
+    public function test_is_upper()
+    {
+        $this->assertTrue(Str::new('FOUR')->isUpper());
+    }
+
+    public function test_is_lower()
+    {
+        $this->assertTrue(Str::new('four')->isLower());
+    }
 }
