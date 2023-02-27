@@ -75,4 +75,9 @@ class StrTest extends TestCase
         $this->assertTrue(Str::new('thanks')->isAlpha());
         $this->assertFalse(Str::new('thanks1')->isAlpha());
     }
+
+    public function test_is_numeric()
+    {
+        $this->assertTrue(Str::new('123')->isNumeric());
+    }
 }

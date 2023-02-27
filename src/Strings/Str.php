@@ -100,4 +100,15 @@ class Str
 
         return ctype_alpha($str->value);
     }
+
+    public function isNumeric(bool $ignoreWhitespace = false): bool
+    {
+        $str = $this;
+
+        if ($ignoreWhitespace) {
+            $str->replace(static::new(' '), static::empty());
+        }
+
+        return ctype_alnum($str->value);
+    }
 }
