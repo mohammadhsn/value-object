@@ -8,6 +8,16 @@ class Integer
     {
     }
 
+    public static function zero(): self
+    {
+        return new static(0);
+    }
+
+    public static function new(int $value): self
+    {
+        return new static($value);
+    }
+
     public function is(self $other): bool
     {
         return $other->value === $this->value;
@@ -31,5 +41,10 @@ class Integer
     public function division(Integer $with): self
     {
         return new self($this->value / $with->value);
+    }
+
+    public function isDividableTo(Integer $with): bool
+    {
+        return ($this->value % $with->value) === 0;
     }
 }

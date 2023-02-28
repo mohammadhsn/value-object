@@ -42,4 +42,10 @@ class TestInteger extends TestCase
             $a->multiply(new Integer(2))->is(new Integer(20))
         );
     }
+
+    public function test_is_dividable()
+    {
+        $this->assertTrue(Integer::new(10)->isDividableTo(Integer::new(2)));
+        $this->assertFalse(Integer::new(10)->isDividableTo(Integer::new(3)));
+    }
 }
