@@ -18,9 +18,29 @@ class Integer
         return new static($value);
     }
 
-    public function is(self $other): bool
+    public function eq(self $other): bool
     {
         return $other->value === $this->value;
+    }
+
+    public function lt(self $other): bool
+    {
+        return $this->value < $other->value;
+    }
+
+    public function lte(self $other): bool
+    {
+        return $this->value <= $other->value;
+    }
+
+    public function gt(self $other): bool
+    {
+        return $this->value > $other->value;
+    }
+
+    public function gte(self $other): bool
+    {
+        return $this->value >= $other->value;
     }
 
     public function add(Integer $with): self
