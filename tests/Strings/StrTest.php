@@ -17,7 +17,8 @@ class StrTest extends TestCase
     public function test_join()
     {
         $this->assertTrue(
-            Str::new('foo')->join(new Str(' '), new Str('bar'), new Str('baz'))
+            Str::new('foo')
+                ->join(new Str(' '), new Str('bar'), new Str('baz'))
                 ->is(new Str('foo bar baz'))
         );
     }
