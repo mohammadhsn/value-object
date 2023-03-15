@@ -137,4 +137,13 @@ class Str
     {
         return ctype_lower($this->value);
     }
+
+    public function repeat(int $times): self
+    {
+        if ($times < 2) {
+            return $this;
+        }
+
+        return new self(str_repeat($this->value, $times));
+    }
 }

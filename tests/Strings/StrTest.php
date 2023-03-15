@@ -106,4 +106,10 @@ class StrTest extends TestCase
             Str::new('d3d5')->matchesWithPattern('/^\w\d\w$/')
         );
     }
+
+    public function test_repeat()
+    {
+        $str = Str::new('!@');
+        $this->assertTrue($str->repeat(3)->is(Str::new('!@!@!@')));
+    }
 }
